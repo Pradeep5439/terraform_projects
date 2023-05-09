@@ -11,6 +11,6 @@ data "aws_ami" "app_ami"{
 }
 
 resource "aws_instance" "firstec2" {
-  ami                     = data.aws_ami.app_ami
+  ami                     = data.aws_ami.app_ami.id
   instance_type           = "t2.micro"
 }
