@@ -20,3 +20,10 @@ resource "aws_instance" "firstec2" {
   ami           = data.aws_ami.app_ami.id
   instance_type = "t2.micro"
 }
+
+resource "aws_vpc" "default"{
+    cidr_block = "10.0.0.0/16"
+    tags = {
+        Name = "Default VPC"
+    }
+}
